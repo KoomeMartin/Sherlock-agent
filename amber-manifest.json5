@@ -3,14 +3,17 @@
 
   // TODO: Declare all config your agent needs from the deployer
   // Use secret: true for sensitive values like API keys
-  config_schema: {
-    type: "object",
-    properties: {
-      my_api_key: { type: "string", secret: true },
-    },
-    required: ["my_api_key"],
-    additionalProperties: false,
+ config_schema: {
+  type: "object",
+  properties: {
+    my_api_key: {
+      type: "string",
+      description: "API key used by the Cybersecurity Agent (e.g. OpenAI)",
+      secret: true},
   },
+  required: ["my_api_key"],
+  additionalProperties: false,
+},
 
   // External services this agent uses
   slots: {
